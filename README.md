@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Face Meme Project - Tongue Detection Dino Game
+
+A Chrome dinosaur-style game controlled by sticking out your tongue! Uses MediaPipe Face Landmarker for real-time face detection.
+
+## Project Structure
+
+```
+face_meme/
+├── frontend/          # Next.js frontend application
+│   ├── src/
+│   │   ├── app/       # Next.js app directory
+│   │   ├── components/ # React components (DinoGame)
+│   │   └── hooks/     # Custom hooks (useFaceLandmarker)
+│   ├── public/
+│   └── package.json
+├── backend/           # Express backend server
+│   ├── src/
+│   └── package.json
+└── README.md
+```
 
 ## Getting Started
 
-First, run the development server:
+### Quick Start (Recommended)
+
+From the root directory:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Install all dependencies
+npm install
+
+# Start the frontend (game)
+npm run dev:frontend
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open `http://localhost:3000` in your browser and allow camera access!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Manual Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Frontend:**
 
-## Learn More
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+The game will run on `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Backend:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+cd backend
+npm install
+npm run dev
+```
 
-## Deploy on Vercel
+The backend will run on `http://localhost:3001`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How to Play
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Allow camera access when prompted
+2. Position your face in the camera view
+3. Stick out your tongue to make the dinosaur jump!
+4. Avoid the cacti obstacles
+5. Press SPACE for testing/manual control
+6. Click RESTART button when game over
+
+## Technologies
+
+- **Frontend**: Next.js 16, React 19, TypeScript, Tailwind CSS, MediaPipe Face Landmarker
+- **Backend**: Express, TypeScript, Node.js
+- **Face Detection**: MediaPipe Tasks Vision (Face Landmarker model)
